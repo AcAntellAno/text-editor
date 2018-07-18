@@ -8,6 +8,18 @@ let bodyParser = require('body-parser'),
 	//variables that never change, we capatilize them
 	const _PORT = 8080;
 
+	//connect to a db (mongodb)
+	mongoose.connect('mongodb://localhost/docs');
+
+	//Docs Schema
+	let docsSchema = mongoose.Schema({
+		body: String,
+		created: {type: Date, default: Date.now}
+	});
+
+	//Docs Model
+	let Doc = mongoose.model('Doc', docsSchema);
+
 	//our root route, which we will change later
 	app.get('/', (req, res) => {
 		res.send('Welcome to the text app mofos');
