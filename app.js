@@ -13,6 +13,7 @@ let bodyParser = require('body-parser'),
 
 	//Docs Schema
 	let docsSchema = mongoose.Schema({
+		title: String,
 		body: String,
 		created: {type: Date, default: Date.now}
 	});
