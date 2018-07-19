@@ -11,6 +11,11 @@ let bodyParser = require('body-parser'),
 	//connect to a db (mongodb)
 	mongoose.connect('mongodb://localhost/docs');
 
+	//set our view engine for ejs
+	app.set('view engine', 'ejs');
+	//adds ability to get static public files like css
+	app.use(express.static('public'));
+
 	//Docs Schema
 	let docsSchema = mongoose.Schema({
 		title: String,
