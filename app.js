@@ -26,10 +26,33 @@ let bodyParser = require('body-parser'),
 	//Docs Model
 	let Doc = mongoose.model('Doc', docsSchema);
 
+	/*Uncomment the below part to create dummy data for mongodb*/
+	// Doc.create({
+	// 	title: "Document 2",
+	// 	body: "Where does it come fhe first line of Lorem Ipsum, comes from a line in section 1.10.32."
+
+	// }, (err, newDoc) => {
+	// 	if(err){
+	// 		console.log("Could not add new doc")
+	// 		console.log(err)
+	// 	} else{
+	// 		console.log("Added new doc")
+	// 		console.log(newDoc)
+	// 	}
+	// });
+
+	/*Mongodb dummy data*/
+
 	//our root route
 	app.get('/', (req, res) => {
-		res.render('index.ejs');
+		res.redirect('/docs');
 	});
+
+	/*****RESTful ROUTES*****/
+
+	app.get('/docs', (req, res) => {
+		res.render('index')
+	})
 
 
 	//our web server
