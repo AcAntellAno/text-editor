@@ -1,0 +1,25 @@
+<!-- views/index.ejs -->
+
+<!DOCTYPE html>
+<head>
+  <% include .\partials\head %>
+</head>
+
+<header>
+  <% include .\partials\header %>
+</header>
+
+<body>
+    <div text-angular ng-model="htmlVariable">
+      <div text-angular="text-angular" name="htmlcontent" ng-model="htmlcontent" class="ta-root">
+        <div class="ta-toolbar btn-toolbar"></div>
+        <div contenteditable="true" class="ta-text ta-editor form-content">
+        (This is a WYSIWYG view)
+        </div>
+        <pre contenteditable="true" class="ta-html ta-editor form-content">
+        (This is the view that shows the HTML tags)
+        </pre>
+        <input type="hidden" style="display: none;" name="htmlcontent" value="...">
+      </div>
+    </div>
+</body>

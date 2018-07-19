@@ -21,9 +21,9 @@ let bodyParser = require('body-parser'),
 	//Docs Model
 	let Doc = mongoose.model('Doc', docsSchema);
 
-	//our root route, which we will change later
+	//our root route
 	app.get('/', (req, res) => {
-		res.send('Welcome to the text app mofos');
+		res.render('index.ejs');
 	});
 
 
@@ -31,4 +31,3 @@ let bodyParser = require('body-parser'),
 	app.listen(_PORT, () => {
 		console.log('The magic is on port 8080...');
 	});
-
