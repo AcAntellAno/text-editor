@@ -31,7 +31,7 @@ let userSchema = mongoose.Schema({
   name: String,
   password: String, //bad practice to store passwords as plain text, but we will fix this later
   docs: [
-    //will be an array of object ideas belonging to a doc
+    //will be an array of object ids belonging to a doc
 
     {
       type: mongoose.Schema.Types.ObjectId,
